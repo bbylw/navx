@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WebNav Hub — 精选 AI、工具、托管与云服务导航" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#12100e" />
+  <title>WebNav Hub</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="#" id="logo">
+        <span class="logo-mark" aria-hidden="true"><i class="fa-solid fa-compass"></i></span>
+        <span class="logo-type">
+          <b>WebNav Hub</b>
+          <small>Startpage</small>
+        </span>
+      </a>
+
+      <div class="cmd">
+        <i class="fa-solid fa-magnifying-glass lead" aria-hidden="true"></i>
+        <input id="search" type="search" placeholder="搜索名称或域名…" autocomplete="off" spellcheck="false" aria-label="搜索站点" />
+        <button type="button" class="cmd-clear" id="clear" aria-label="清除搜索"><i class="fa-solid fa-xmark"></i></button>
+        <span class="cmd-kbd" aria-hidden="true">/</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="rail" id="rail" aria-label="分类">
+      <div class="rail-head"><span>Index</span></div>
+    </aside>
+
+    <div class="main">
+      <section class="intro" aria-label="概览">
+        <div class="hero-panel">
+          <div class="hero-orbit" aria-hidden="true">
+            <span class="orbit-ring r1"></span>
+            <span class="orbit-ring r2"></span>
+            <span class="orbit-ring r3"></span>
+            <span class="orbit-tick t1"></span>
+            <span class="orbit-tick t2"></span>
+            <span class="orbit-tick t3"></span>
+            <span class="orbit-tick t4"></span>
+            <span class="orbit-needle">
+              <i class="fa-solid fa-location-arrow"></i>
+            </span>
+            <span class="orbit-core"></span>
+          </div>
+
+          <div class="hero-center">
+            <div class="hero-kicker">
+              <span class="pulse"></span>
+              <span>STARTPAGE</span>
+            </div>
+            <div class="hero-title">
+              <span class="hero-word">Web</span><span class="hero-word accent">Nav</span>
+            </div>
+            <div class="hero-meta">
+              <span class="hero-chip"><kbd>/</kbd> search</span>
+              <span class="hero-dot"></span>
+              <span class="hero-chip" id="hero-clock">--:--</span>
+              <span class="hero-dot"></span>
+              <span class="hero-chip" id="hero-date">—</span>
+            </div>
+          </div>
+
+          <div class="hero-jumps" id="hero-jumps" aria-label="快速分类"></div>
+        </div>
+      </section>
+
+      <nav class="chips" id="chips" aria-label="移动分类"></nav>
+
+      <div id="catalog"></div>
+
+      <div class="empty" id="empty" role="status">
+        <i class="fa-regular fa-folder-open"></i>
+        <h3>没有匹配的站点</h3>
+        <p>换个关键词，或清空搜索后继续浏览。</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <span>© <span id="year"></span> WebNav Hub</span>
+    <nav>
+      <a href="#">隐私政策</a>
+      <a href="#">使用条款</a>
+      <a href="#">联系我们</a>
+    </nav>
+  </footer>
+
+  <button type="button" class="to-top" id="to-top" aria-label="回到顶部">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="data.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
